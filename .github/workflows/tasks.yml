@@ -1,0 +1,33 @@
+name: GitHub Actions Practical
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  practical:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Display Current Directory
+        run: pwd
+
+      - name: List Files
+        run: ls -la
+
+      - name: Display Current Date
+        run: date
+
+      - name: Create Text File
+        run: |
+          echo "Hello from GitHub Actions" > output.txt
+          cat output.txt
+
+      - name: Run Python Program
+        run: |
+          echo 'print("Hello from Python")' > program.py
+          python3 program.py
