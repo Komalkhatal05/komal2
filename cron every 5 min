@@ -7,7 +7,6 @@ on:
 jobs:
   cron-job:
     runs-on: ubuntu-latest
-
     steps:
       - name: Start Message
         run: echo "Job started"
